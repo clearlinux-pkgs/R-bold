@@ -1,7 +1,8 @@
-0.8.0
+0.8.6
 R-crul
 R-data.table
 R-plyr
 R-reshape
 R-tibble
+R-vcr
 R-xml2
