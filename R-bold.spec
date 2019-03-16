@@ -4,19 +4,13 @@
 #
 Name     : R-bold
 Version  : 0.8.6
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/bold_0.8.6.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bold_0.8.6.tar.gz
 Summary  : Interface to Bold Systems API
 Group    : Development/Tools
 License  : MIT
-Requires: R-crul
-Requires: R-data.table
-Requires: R-plyr
-Requires: R-reshape
-Requires: R-tibble
-Requires: R-vcr
-Requires: R-xml2
+Requires: R-yaml
 BuildRequires : R-crul
 BuildRequires : R-data.table
 BuildRequires : R-plyr
@@ -24,6 +18,7 @@ BuildRequires : R-reshape
 BuildRequires : R-tibble
 BuildRequires : R-vcr
 BuildRequires : R-xml2
+BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
@@ -40,10 +35,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1544886941
+export SOURCE_DATE_EPOCH=1552721528
 
 %install
-export SOURCE_DATE_EPOCH=1544886941
+export SOURCE_DATE_EPOCH=1552721528
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -79,8 +74,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library bold|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  bold || :
 
 
 %files
@@ -114,3 +108,34 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/bold/help/paths.rds
 /usr/lib64/R/library/bold/html/00Index.html
 /usr/lib64/R/library/bold/html/R.css
+/usr/lib64/R/library/bold/tests/fixtures/bold_identify_db_param.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_identify_response_param.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_identify_works.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_seq_works_bin.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_seq_works_taxon.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_seq_works_taxon_response.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_seqspec_one.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_seqspec_three.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_seqspec_two.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_specimens_response.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id1.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id2.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id_datatypes_param_basic.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id_datatypes_param_geo.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id_datatypes_param_multiple.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id_datatypes_param_sequencinglabs.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id_datatypes_param_stats1.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id_datatypes_param_stats2.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id_includetree_param_false.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id_includetree_param_true.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_id_multiple_ids.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_name.yml
+/usr/lib64/R/library/bold/tests/fixtures/bold_tax_name_fuzzy.yml
+/usr/lib64/R/library/bold/tests/test-all.R
+/usr/lib64/R/library/bold/tests/testthat/helper-bold.R
+/usr/lib64/R/library/bold/tests/testthat/test-bold_identify.R
+/usr/lib64/R/library/bold/tests/testthat/test-bold_seq.R
+/usr/lib64/R/library/bold/tests/testthat/test-bold_seqspec.R
+/usr/lib64/R/library/bold/tests/testthat/test-bold_specimens.R
+/usr/lib64/R/library/bold/tests/testthat/test-bold_tax_id.R
+/usr/lib64/R/library/bold/tests/testthat/test-bold_tax_name.R
