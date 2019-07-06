@@ -4,21 +4,20 @@
 #
 Name     : R-bold
 Version  : 0.9.0
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/bold_0.9.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bold_0.9.0.tar.gz
 Summary  : Interface to Bold Systems API
 Group    : Development/Tools
 License  : MIT
-Requires: R-base64enc
 Requires: R-crul
 Requires: R-data.table
 Requires: R-jsonlite
-Requires: R-lazyeval
 Requires: R-plyr
 Requires: R-reshape
+Requires: R-stringi
+Requires: R-stringr
 Requires: R-tibble
-Requires: R-vcr
 Requires: R-xml2
 BuildRequires : R-base64enc
 BuildRequires : R-crul
@@ -27,9 +26,12 @@ BuildRequires : R-jsonlite
 BuildRequires : R-lazyeval
 BuildRequires : R-plyr
 BuildRequires : R-reshape
+BuildRequires : R-stringi
+BuildRequires : R-stringr
 BuildRequires : R-tibble
 BuildRequires : R-vcr
 BuildRequires : R-xml2
+BuildRequires : R-yaml
 BuildRequires : buildreq-R
 
 %description
@@ -45,13 +47,13 @@ bold
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1561733849
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562443781
 
 %install
-export SOURCE_DATE_EPOCH=1561733849
+export SOURCE_DATE_EPOCH=1562443781
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -80,7 +82,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0

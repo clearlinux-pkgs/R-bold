@@ -6,6 +6,7 @@ R-jsonlite
 R-lazyeval
 R-plyr
 R-reshape
+R-stringi
 R-tibble
 R-vcr
 R-xml2
