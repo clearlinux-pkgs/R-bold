@@ -4,7 +4,7 @@
 #
 Name     : R-bold
 Version  : 0.9.0
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/bold_0.9.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bold_0.9.0.tar.gz
 Summary  : Interface to Bold Systems API
@@ -17,7 +17,6 @@ Requires: R-plyr
 Requires: R-reshape
 Requires: R-stringr
 Requires: R-tibble
-Requires: R-vcr
 Requires: R-xml2
 BuildRequires : R-crul
 BuildRequires : R-data.table
@@ -29,6 +28,7 @@ BuildRequires : R-tibble
 BuildRequires : R-vcr
 BuildRequires : R-xml2
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 bold
@@ -44,10 +44,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569219197
+export SOURCE_DATE_EPOCH=1571804649
 
 %install
-export SOURCE_DATE_EPOCH=1569219197
+export SOURCE_DATE_EPOCH=1571804649
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
