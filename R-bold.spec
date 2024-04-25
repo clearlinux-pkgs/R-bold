@@ -5,7 +5,7 @@
 #
 Name     : R-bold
 Version  : 1.3.0
-Release  : 49
+Release  : 50
 URL      : https://cran.r-project.org/src/contrib/bold_1.3.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/bold_1.3.0.tar.gz
 Summary  : Interface to Bold Systems API
